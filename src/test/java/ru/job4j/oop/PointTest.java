@@ -9,8 +9,6 @@ public class PointTest {
 
     @Test
     public void when00to20then2() {
-        int x2 = 2;
-        int y2 = 0;
         Point a = new Point(0, 0);
         Point b = new Point(2, 0);
         double out = a.distance(b);
