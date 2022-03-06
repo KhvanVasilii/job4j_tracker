@@ -1,14 +1,11 @@
 package ru.job4j.inheritance;
 
-import java.util.Date;
-
 public class Doctor extends Profession {
+    private char sex;
 
-    public Doctor(String name, String surname, String education, Date birthday) {
+    public Doctor(String name, String surname, String education, String birthday, char sex) {
         super(name, surname, education, birthday);
-    }
-
-    public Doctor() {
+        this.sex = sex;
     }
 
     public Diagnosis heal(Pacient pacient) {

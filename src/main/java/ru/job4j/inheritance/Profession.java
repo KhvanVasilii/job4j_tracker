@@ -1,21 +1,16 @@
 package ru.job4j.inheritance;
 
-import java.util.Date;
-
 public class Profession {
     private String name;
     private String surname;
     private String education;
-    private Date birthday;
+    private String birthday;
 
-    public Profession(String name, String surname, String education, Date birthday) {
+    public Profession(String name, String surname, String education, String birthday) {
         this.name = name;
         this.surname = surname;
         this.education = education;
         this.birthday = birthday;
-    }
-
-    public Profession() {
     }
 
     public String getName() {
@@ -30,7 +25,7 @@ public class Profession {
         return education;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 }
