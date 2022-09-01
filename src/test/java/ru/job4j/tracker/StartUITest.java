@@ -20,7 +20,7 @@ public class StartUITest {
     public void whenReplaceItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {new EditAction(), new ExitAction()};
+        UserAction[] actions = {new EditAction(out), new ExitAction()};
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         String id = Integer.toString(item.getId());
@@ -41,7 +41,7 @@ public class StartUITest {
                 new String[]{"0", id, "1"}
         );
         UserAction[] actions = {
-                new DeleteAction(),
+                new DeleteAction(out),
                 new ExitAction()
         };
         new StartUI(out).init(in, tracker, actions);
