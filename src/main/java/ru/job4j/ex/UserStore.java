@@ -11,11 +11,10 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        boolean isValidName = user.getUsername().length() > 2;
-        if (isValidName && user.isValid()) {
-            return true;
+        if (!user.isValid() || user.getUsername().length() < 3) {
+            throw new UserInvalidException("Invalid user");
         }
-        throw new UserInvalidException("Invalid user");
+        return true;
     }
 
     public static void main(String[] args) {
@@ -27,10 +26,10 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException e) {
-            System.out.println(e.getMessage());
-        } catch (UserNotFoundException e) {
-            System.out.println(e.getMessage());
+        } catch (UserInvalidException uie) {
+            uie.printStackTrace();
+        } catch (UserNotFoundException ufe) {
+            ufe.printStackTrace();
         }
     }
 }
