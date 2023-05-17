@@ -2,8 +2,7 @@ package ru.job4j.pojo;
 
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LicenseTest {
     @Test
@@ -12,7 +11,7 @@ public class LicenseTest {
         first.setCode("audio");
         License second = new License();
         second.setCode("audio");
-        assertThat(first, is(second));
+        assertThat(first).isEqualTo(second);
     }
 
 }

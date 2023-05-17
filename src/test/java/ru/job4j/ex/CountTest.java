@@ -3,8 +3,8 @@ package ru.job4j.ex;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThrows;
 
 public class CountTest {
     @Test
@@ -14,7 +14,7 @@ public class CountTest {
                 () -> {
                     Count.add(10, 2);
                 });
-        assertThat((exception.getMessage()), is("Start should be less than finish."));
+        assertThat(exception.getMessage()).isEqualTo("Start should be less than finish.");
     }
 
 }
